@@ -66,4 +66,34 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+
+    // Compose BOM (버전 통합 관리)
+    implementation(platform("androidx.compose:compose-bom:2023.10.01")) // 직접 명시 권장
+    androidTestImplementation(platform("androidx.compose:compose-bom:2023.10.01"))
+
+    // Compose 핵심 구성요소
+    implementation("androidx.compose.ui:ui")
+    implementation("androidx.compose.ui:ui-tooling-preview")
+    implementation("androidx.compose.material3:material3")
+    implementation("androidx.compose.runtime:runtime")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose") // viewModel()
+
+    // 디버그 도구
+    debugImplementation("androidx.compose.ui:ui-tooling")
+    debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    // 테스트
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
+
+    // Retrofit + Gson
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    // RecyclerView
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+
+    // Lifecycle ViewModel & LiveData
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
 }

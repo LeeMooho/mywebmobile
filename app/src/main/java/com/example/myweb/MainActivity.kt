@@ -3,44 +3,56 @@ package com.example.myweb
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.myweb.model.BoardDTO
+import com.example.myweb.viewmodel.BoardViewModel
+
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.myweb.ui.theme.MywebTheme
+import androidx.compose.ui.unit.dp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MywebTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
+            BoardApp()
+        }
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun BoardApp(viewModel: BoardViewModel = viewModel()) {
+    val boards by viewModel.boardList.collectAsState()
+
+    LaunchedEffect(Unit) {
+        viewModel.fetchBoards()
+    }
+
+    Scaffold(
+        topBar = {
+            TopAppBar(title = { Text("게시판 목록") })
+        }
+    ) { padding ->
+        LazyColumn(contentPadding = padding) {
+            items(boards) { board ->
+                BoardItem(board)
             }
         }
     }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    MywebTheme {
-        Greeting("Android")
+fun BoardItem(board: BoardDTO) {
+    Column(modifier = Modifier
+        .fillMaxWidth()
+        .padding(16.dp)) {
+        Text(text = board.boardTitle, style = MaterialTheme.typography.titleMedium)
+        Text(text = board.boardWriter, style = MaterialTheme.typography.labelMedium)
+        Text(text = board.boardRegdate, style = MaterialTheme.typography.labelSmall)
     }
 }
