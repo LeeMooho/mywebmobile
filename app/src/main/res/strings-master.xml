@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">
+        <en>myweb</en>
+        <ko>myweb</ko>
+        <ja>myweb</ja>
+    </string>
+    <string name="home">
+        <en>Home</en>
+        <ko>홈</ko>
+        <ja>ホーム</ja>
+    </string>
+    <string name="board">
+        <en>Board</en>
+        <ko>게시판</ko>
+        <ja>掲示板</ja>
+    </string>
+    <string name="settings">
+        <en>Settings</en>
+        <ko>설정</ko>
+        <ja>設定</ja>
+    </string>
+</resources>

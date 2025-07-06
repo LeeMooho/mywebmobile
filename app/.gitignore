@@ -1,1 +1,3 @@
 /build
+/src/main/res/node_modules
+/src/main/res/package-lock.json
