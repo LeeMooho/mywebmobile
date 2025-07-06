@@ -20,6 +20,9 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.*
 import com.example.myweb.model.BoardDTO
 import com.example.myweb.viewmodel.BoardViewModel
+import com.example.myweb.ui.HomeScreen
+import com.example.myweb.ui.BoardApp
+import com.example.myweb.ui.SettingsScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -84,53 +87,7 @@ fun MainScreen() {
             composable("home") { HomeScreen() }
             composable("board") { BoardApp() }
             composable("settings") { SettingsScreen() }
-        }
-    }
-}
+          }
 
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun BoardApp(viewModel: BoardViewModel = viewModel()) {
-    val boards by viewModel.boardList.collectAsState()
-
-    LaunchedEffect(Unit) {
-        viewModel.fetchBoards()
-    }
-
-    Scaffold(
-        topBar = {
-            TopAppBar(title = { Text("게시판 목록") })
-        }
-    ) { padding ->
-        LazyColumn(contentPadding = padding) {
-            items(boards) { board ->
-                BoardItem(board)
-            }
-        }
-    }
-}
-
-@Composable
-fun HomeScreen() {
-    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-        Text("홈 화면입니다.")
-    }
-}
-
-@Composable
-fun SettingsScreen() {
-    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-        Text("설정 화면입니다.")
-    }
-}
-
-@Composable
-fun BoardItem(board: BoardDTO) {
-    Column(modifier = Modifier
-        .fillMaxWidth()
-        .padding(16.dp)) {
-        Text(text = board.boardTitle, style = MaterialTheme.typography.titleMedium)
-        Text(text = board.boardWriter, style = MaterialTheme.typography.labelMedium)
-        Text(text = board.boardRegdate, style = MaterialTheme.typography.labelSmall)
     }
 }
