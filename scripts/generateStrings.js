@@ -10,7 +10,7 @@ const LANG_MAP = {
 };
 
 const inputPath = path.join(__dirname, 'strings-master.xml');
-const outputBase = __dirname
+const outputBase = path.join(__dirname, '../app/src/main/res');
 
 // XML 파서 설정
 const parser = new XMLParser({
