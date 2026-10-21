@@ -7,7 +7,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface BoardApi {
-    @GET("/api/board/board-list")
+    @GET("api/board/board-list")
     suspend fun getBoardList(
         @Query("searchCondition") searchCondition: String,
         @Query("searchKeyword") searchKeyword: String

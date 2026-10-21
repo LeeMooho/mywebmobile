@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">
         <en>myweb</en>
@@ -19,5 +19,195 @@
         <en>Settings</en>
         <ko>설정</ko>
         <ja>設定</ja>
+    </string>
+    <string name="home_title">
+        <en>Your everyday space</en>
+        <ko>나의 일상, 새로운 연결</ko>
+        <ja>日常に、新しいつながりを</ja>
+    </string>
+    <string name="home_subtitle">
+        <en>Connect, discover, and share.</en>
+        <ko>발견하고, 이야기하고, 함께해요.</ko>
+        <ja>見つけて、話して、つながろう。</ja>
+    </string>
+    <string name="home_feature_title">
+        <en>A fresh perspective</en>
+        <ko>새로운 이야기를 만나보세요</ko>
+        <ja>新しいストーリーに出会う</ja>
+    </string>
+    <string name="home_feature_body">
+        <en>Good conversations start here. Explore your community and share what matters to you.</en>
+        <ko>작은 생각이 좋은 대화의 시작이 됩니다. 커뮤니티에서 다양한 이야기를 만나보세요.</ko>
+        <ja>小さな思いが、素敵な会話の始まりに。コミュニティの話題を見つけましょう。</ja>
+    </string>
+    <string name="home_explore">
+        <en>Explore the board</en>
+        <ko>게시판 둘러보기</ko>
+        <ja>掲示板を見る</ja>
+    </string>
+    <string name="home_settings_title">
+        <en>Make it yours</en>
+        <ko>나에게 맞춘 공간</ko>
+        <ja>自分らしい空間に</ja>
+    </string>
+    <string name="home_settings_body">
+        <en>Choose your language and feel at home.</en>
+        <ko>편안한 언어로 더 가깝게 만나세요.</ko>
+        <ja>好きな言語でもっと身近に。</ja>
+    </string>
+    <string name="home_personalize">
+        <en>Personalize your experience</en>
+        <ko>내 환경 설정하기</ko>
+        <ja>環境を設定する</ja>
+    </string>
+    <string name="home_community">
+        <en>COMMUNITY</en>
+        <ko>커뮤니티</ko>
+        <ja>コミュニティ</ja>
+    </string>
+    <string name="login">
+        <en>Sign in</en>
+        <ko>로그인</ko>
+        <ja>ログイン</ja>
+    </string>
+    <string name="logout">
+        <en>Sign out</en>
+        <ko>로그아웃</ko>
+        <ja>ログアウト</ja>
+    </string>
+    <string name="back">
+        <en>Back</en>
+        <ko>뒤로</ko>
+        <ja>戻る</ja>
+    </string>
+    <string name="login_welcome">
+        <en>Welcome back</en>
+        <ko>다시 만나 반가워요</ko>
+        <ja>おかえりなさい</ja>
+    </string>
+    <string name="login_description">
+        <en>Your community is waiting. Sign in to continue.</en>
+        <ko>로그인하고 커뮤니티의 이야기를 이어가세요.</ko>
+        <ja>ログインしてコミュニティの話を続けましょう。</ja>
+    </string>
+    <string name="user_id">
+        <en>User ID</en>
+        <ko>아이디</ko>
+        <ja>ユーザーID</ja>
+    </string>
+    <string name="password">
+        <en>Password</en>
+        <ko>비밀번호</ko>
+        <ja>パスワード</ja>
+    </string>
+    <string name="show_password">
+        <en>Show</en>
+        <ko>표시</ko>
+        <ja>表示</ja>
+    </string>
+    <string name="hide_password">
+        <en>Hide</en>
+        <ko>숨기기</ko>
+        <ja>隠す</ja>
+    </string>
+    <string name="signing_in">
+        <en>Signing in…</en>
+        <ko>로그인 중…</ko>
+        <ja>ログイン中…</ja>
+    </string>
+    <string name="login_required">
+        <en>Enter your user ID and password.</en>
+        <ko>아이디와 비밀번호를 입력해 주세요.</ko>
+        <ja>ユーザーIDとパスワードを入力してください。</ja>
+    </string>
+    <string name="account">
+        <en>Account</en>
+        <ko>계정</ko>
+        <ja>アカウント</ja>
+    </string>
+    <string name="account_guest">
+        <en>Explore as a guest, or sign in to your account.</en>
+        <ko>게스트로 둘러보거나 계정에 로그인하세요.</ko>
+        <ja>ゲストとして閲覧するか、ログインしてください。</ja>
+    </string>
+    <string name="signing_out">
+        <en>Signing out…</en>
+        <ko>로그아웃 중…</ko>
+        <ja>ログアウト中…</ja>
+    </string>
+    <string name="language">
+        <en>Language</en>
+        <ko>언어</ko>
+        <ja>言語</ja>
+    </string>
+    <string name="appearance">
+        <en>Appearance</en>
+        <ko>화면 테마</ko>
+        <ja>画面テーマ</ja>
+    </string>
+    <string name="theme_system">
+        <en>Use device setting</en>
+        <ko>기기 설정 사용</ko>
+        <ja>端末の設定を使用</ja>
+    </string>
+    <string name="theme_light">
+        <en>Light</en>
+        <ko>라이트</ko>
+        <ja>ライト</ja>
+    </string>
+    <string name="theme_dark">
+        <en>Dark</en>
+        <ko>다크</ko>
+        <ja>ダーク</ja>
+    </string>
+    <string name="app_version">
+        <en>Version %1$s</en>
+        <ko>버전 %1$s</ko>
+        <ja>バージョン %1$s</ja>
+    </string>
+    <string name="error_network">
+        <en>Check your connection and try again.</en>
+        <ko>인터넷 연결을 확인하고 다시 시도해 주세요.</ko>
+        <ja>接続を確認して、もう一度お試しください。</ja>
+    </string>
+    <string name="error_unauthorized">
+        <en>Access is unavailable. Please sign in again or check your permissions.</en>
+        <ko>접근할 수 없습니다. 다시 로그인하거나 권한을 확인해 주세요.</ko>
+        <ja>アクセスできません。再度ログインするか、権限を確認してください。</ja>
+    </string>
+    <string name="error_credentials">
+        <en>The user ID or password is incorrect.</en>
+        <ko>아이디 또는 비밀번호가 올바르지 않습니다.</ko>
+        <ja>ユーザーIDまたはパスワードが正しくありません。</ja>
+    </string>
+    <string name="error_server">
+        <en>The service is unavailable. Please try again later.</en>
+        <ko>서비스를 이용할 수 없습니다. 잠시 후 다시 시도해 주세요.</ko>
+        <ja>サービスを利用できません。後でもう一度お試しください。</ja>
+    </string>
+    <string name="error_response">
+        <en>We could not read the server response. Please try again.</en>
+        <ko>서버 응답을 읽을 수 없습니다. 다시 시도해 주세요.</ko>
+        <ja>サーバーの応答を読み取れません。もう一度お試しください。</ja>
+    </string>
+    <string name="error_secure_connection">
+        <en>Sign-in is temporarily unavailable. Please try again later.</en>
+        <ko>지금은 로그인할 수 없습니다. 잠시 후 다시 시도해 주세요.</ko>
+        <ja>現在ログインできません。後でもう一度お試しください。</ja>
+    </string>
+    <string name="refresh">
+        <en>Refresh</en>
+        <ko>새로고침</ko>
+        <ja>更新</ja>
+    </string>
+    <string name="retry">
+        <en>Try again</en>
+        <ko>다시 시도</ko>
+        <ja>再試行</ja>
+    </string>
+    <string name="board_empty">
+        <en>No posts yet. Check back soon.</en>
+        <ko>아직 게시글이 없습니다. 나중에 다시 확인해 주세요.</ko>
+        <ja>投稿はまだありません。また確認してください。</ja>
     </string>
 </resources>
