@@ -210,4 +210,14 @@
         <ko>아직 게시글이 없습니다. 나중에 다시 확인해 주세요.</ko>
         <ja>投稿はまだありません。また確認してください。</ja>
     </string>
+    <string name="board_detail">
+        <en>Post details</en>
+        <ko>게시글 상세</ko>
+        <ja>投稿の詳細</ja>
+    </string>
+    <string name="board_content">
+        <en>Content</en>
+        <ko>내용</ko>
+        <ja>内容</ja>
+    </string>
 </resources>

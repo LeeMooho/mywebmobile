@@ -4,6 +4,7 @@ import com.example.myweb.model.BoardDTO
 import com.example.myweb.model.ResponseDTO
 import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface BoardApi {
@@ -11,5 +12,10 @@ interface BoardApi {
     suspend fun getBoardList(
         @Query("searchCondition") searchCondition: String,
         @Query("searchKeyword") searchKeyword: String
+    ): Response<ResponseDTO<BoardDTO>>
+
+    @GET("api/board/board/{boardNo}")
+    suspend fun getBoard(
+        @Path("boardNo") boardNo: Long
     ): Response<ResponseDTO<BoardDTO>>
 }

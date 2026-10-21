@@ -42,4 +42,6 @@
   <string name="refresh">更新</string>
   <string name="retry">再試行</string>
   <string name="board_empty">投稿はまだありません。また確認してください。</string>
+  <string name="board_detail">投稿の詳細</string>
+  <string name="board_content">内容</string>
 </resources>

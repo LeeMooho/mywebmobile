@@ -17,6 +17,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavGraph.Companion.findStartDestination
+import androidx.navigation.NavType
+import androidx.navigation.navArgument
 import androidx.navigation.compose.*
 import com.example.myweb.data.AppContainer
 import com.example.myweb.data.ThemeMode
@@ -25,6 +27,7 @@ import com.example.myweb.ui.*
 import com.example.myweb.ui.theme.MywebTheme
 import com.example.myweb.utils.LocaleHelper
 import com.example.myweb.viewmodel.BoardViewModel
+import com.example.myweb.viewmodel.BoardDetailViewModel
 import com.example.myweb.viewmodel.LoginViewModel
 import kotlinx.coroutines.launch
 
@@ -75,7 +78,7 @@ fun MainScreen(container: AppContainer = (LocalContext.current.applicationContex
     }
 
     Scaffold(bottomBar = {
-        if (currentRoute != "login") {
+        if (currentRoute != "login" && currentRoute != "board/{boardNo}") {
             NavigationBar {
                 listOf(
                     Triple("home", R.string.home, Icons.Default.Home),
@@ -98,7 +101,20 @@ fun MainScreen(container: AppContainer = (LocalContext.current.applicationContex
             }
             composable("board") {
                 val vm: BoardViewModel = viewModel(factory = viewModelFactory { BoardViewModel(container.boards) })
-                BoardApp(vm)
+                BoardApp(vm, onBoardClick = { boardNo ->
+                    navController.navigate("board/$boardNo") { launchSingleTop = true }
+                })
+            }
+            composable(
+                route = "board/{boardNo}",
+                arguments = listOf(navArgument("boardNo") { type = NavType.LongType })
+            ) { entry ->
+                val boardNo = entry.arguments?.getLong("boardNo") ?: return@composable
+                val vm: BoardDetailViewModel = viewModel(
+                    key = "board-detail-$boardNo",
+                    factory = viewModelFactory { BoardDetailViewModel(boardNo, container.boards) }
+                )
+                BoardDetailApp(vm, onBack = { navController.popBackStack() })
             }
             composable("settings") {
                 SettingsScreen(

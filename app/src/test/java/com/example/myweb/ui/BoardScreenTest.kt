@@ -5,6 +5,7 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import com.example.myweb.api.ApiError
 import com.example.myweb.model.BoardDTO
 import com.example.myweb.ui.theme.MywebTheme
+import com.example.myweb.viewmodel.BoardDetailUiState
 import com.example.myweb.viewmodel.BoardUiState
 import org.junit.Assert.assertEquals
 import org.junit.Rule
@@ -44,5 +45,61 @@ class BoardScreenTest {
         compose.onNodeWithText("A story").assertIsDisplayed()
         compose.onNodeWithText("Writer").assertIsDisplayed()
         compose.onNodeWithText("2026-10-22").assertIsDisplayed()
+    }
+
+    @Test fun clickingBoardReturnsItsIdentifier() {
+        val board = BoardDTO(42, "A story", "Content", "2026-10-22", "Writer")
+        var selected: Long? = null
+        compose.setContent {
+            MywebTheme {
+                BoardContent(
+                    state = BoardUiState.Ready(listOf(board)),
+                    onRetry = {},
+                    onBoardClick = { selected = it }
+                )
+            }
+        }
+        compose.onNodeWithTag("board_item_42").performClick()
+        compose.runOnIdle { assertEquals(42L, selected) }
+    }
+
+    @Test fun detailShowsTitleMetadataAndCompleteContent() {
+        val board = BoardDTO(
+            42,
+            "A detailed story",
+            "First line\nSecond line",
+            "2026-10-22",
+            "Writer"
+        )
+        compose.setContent {
+            MywebTheme {
+                BoardDetailContent(BoardDetailUiState.Ready(board), onBack = {}, onRetry = {})
+            }
+        }
+        compose.onNodeWithText("Post details").assertIsDisplayed()
+        compose.onNodeWithText("A detailed story").assertIsDisplayed()
+        compose.onNodeWithText("Writer").assertIsDisplayed()
+        compose.onNodeWithText("2026-10-22").assertIsDisplayed()
+        compose.onNodeWithText("First line\nSecond line").assertIsDisplayed()
+    }
+
+    @Test fun detailBackAndRetryInvokeTheirCallbacks() {
+        var backCalls = 0
+        var retryCalls = 0
+        compose.setContent {
+            MywebTheme {
+                BoardDetailContent(
+                    BoardDetailUiState.Error(ApiError.NETWORK),
+                    onBack = { backCalls++ },
+                    onRetry = { retryCalls++ }
+                )
+            }
+        }
+        compose.onNodeWithContentDescription("Back").performClick()
+        compose.onNodeWithText("Try again").performClick()
+        compose.runOnIdle {
+            assertEquals(1, backCalls)
+            assertEquals(1, retryCalls)
+        }
     }
 }

@@ -64,6 +64,32 @@ class ApiClientTest {
         assertEquals("Bearer test-token", request.getHeader("Authorization"))
     }
 
+    @Test fun boardDetailUsesIdentifierPathAndReturnsFullPost() = runTest {
+        sessions.signIn(session())
+        respond(
+            """{"statusCode":200,"errorCode":0,"item":{"boardNo":42,"boardTitle":"Hello","boardContent":"Full body","boardWriter":"Test","boardRegdate":"2026-10-22"}}"""
+        )
+        val result = RemoteBoardRepository(client.boards).loadBoard(42) as ApiResult.Success
+        assertEquals("Full body", result.value.boardContent)
+        val request = server.takeRequest(2, TimeUnit.SECONDS)!!
+        assertEquals("GET", request.method)
+        assertEquals("/api/board/board/42", request.path)
+        assertEquals("Bearer test-token", request.getHeader("Authorization"))
+    }
+
+    @Test fun boardDetailWithoutItemIsInvalidResponse() = runTest {
+        respond("""{"statusCode":200,"errorCode":0}""")
+        assertEquals(
+            ApiError.INVALID_RESPONSE,
+            (RemoteBoardRepository(client.boards).loadBoard(42) as ApiResult.Failure).error
+        )
+    }
+
+    @Test(expected = IllegalArgumentException::class)
+    fun boardDetailRejectsNonPositiveIdentifierBeforeRequest() = runTest {
+        RemoteBoardRepository(client.boards).loadBoard(0)
+    }
+
     @Test fun invalidCredentialsAreMappedWithoutLeakingServerMessage() = runTest {
         respond("""{"statusCode":400,"errorCode":201,"errorMessage":"wrong password"}""", 400)
         assertEquals(ApiError.INVALID_CREDENTIALS, (auth.login("test", "wrong") as ApiResult.Failure).error)

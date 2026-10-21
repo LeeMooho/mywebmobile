@@ -23,6 +23,7 @@ were not tested from this environment.
 | Login | `POST api/user/login`, JSON `userId` and `userPw` | `statusCode: 200`, `item` containing `userId`, `userName`, `token` |
 | Logout | `GET api/user/logout`, Bearer token | `statusCode: 200`, `item` message map |
 | Boards | `GET api/board/board-list?searchCondition=all&searchKeyword=` | `statusCode: 200`, `pageItems.content` array |
+| Board details | `GET api/board/board/{boardNo}` | `statusCode: 200`, `item` containing the complete post |
 
 HTTP status and envelope failures are checked separately. A missing or zero
 `errorCode` with a 2xx `statusCode` is accepted, matching the server DTO defaults. Server error codes

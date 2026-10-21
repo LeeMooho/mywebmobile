@@ -20,10 +20,11 @@ The suite runs on the JVM without an emulator or live board server:
   and server error messages.
 - Settings UI: language changes immediately update navigation, theme selection,
   and navigation to/from the login screen.
-- Board UI: loading, empty, populated, error and retry states.
+- Board UI: loading, empty, populated, error and retry states, list-item selection,
+  and detailed title/author/date/content rendering with back navigation.
 - ViewModels: input validation, successful/failed login, retry, preservation of
   password whitespace, and duplicate-request prevention.
-- HTTPS MockWebServer: login JSON and API paths, Bearer token delivery, session
+- HTTPS MockWebServer: login and board-detail API paths, full post mapping, Bearer token delivery, session
   expiration/logout, missing tokens, malformed responses, envelope failures,
   redirect rejection and cleartext credential/token protection. Local test
   certificates are explicitly trusted; TLS and hostname verification stay enabled.
