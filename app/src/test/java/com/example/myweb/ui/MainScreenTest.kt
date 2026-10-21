@@ -2,9 +2,11 @@ package com.example.myweb.ui
 
 import androidx.compose.ui.test.assertIsSelected
 import androidx.compose.ui.test.assertIsNotSelected
+import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.isSelectable
 import androidx.compose.ui.test.junit4.createComposeRule
+import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performScrollTo
@@ -24,19 +26,20 @@ class MainScreenTest {
     @Test fun bottomNavigationTracksDestinationAndReturnsHome() {
         compose.setContent { MywebTheme { MainScreen() } }
         val home = compose.onNode(hasText("Home") and isSelectable())
-        val settings = compose.onNode(hasText("Settings") and isSelectable())
+        val myPage = compose.onNode(hasText("My Page") and isSelectable())
         home.assertIsSelected()
-        settings.assertIsNotSelected().performClick()
-        settings.assertIsSelected()
+        myPage.assertIsNotSelected().performClick()
+        myPage.assertIsSelected()
         home.assertIsNotSelected().performClick()
         home.assertIsSelected()
-        settings.assertIsNotSelected()
+        myPage.assertIsNotSelected()
     }
 
-    @Test fun homeSettingsShortcutSelectsSettingsTab() {
+    @Test fun homeSettingsShortcutOpensSettingsAndBackReturnsHome() {
         compose.setContent { MywebTheme { MainScreen() } }
         compose.onNodeWithText("Personalize your experience").performScrollTo().performClick()
-        compose.onNode(hasText("Settings") and isSelectable()).assertIsSelected()
-        compose.onNode(hasText("Home") and isSelectable()).assertIsNotSelected()
+        compose.onNodeWithText("Settings").assertIsDisplayed()
+        compose.onNodeWithContentDescription("Back").performClick()
+        compose.onNode(hasText("Home") and isSelectable()).assertIsSelected()
     }
 }

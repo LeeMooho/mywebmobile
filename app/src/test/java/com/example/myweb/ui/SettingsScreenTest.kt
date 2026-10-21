@@ -25,15 +25,19 @@ class SettingsScreenTest {
         context.getSharedPreferences("app_preferences", Context.MODE_PRIVATE).edit().clear().commit()
         container = AppContainer(context)
     }
-    private fun openSettings() {
+    private fun openMyPage() {
         compose.setContent { AppRoot(container) }
-        compose.onNode(hasText("Settings") and isSelectable()).performClick()
+        compose.onNode(hasText("My Page") and isSelectable()).performClick()
+    }
+    private fun openSettings() {
+        openMyPage()
+        compose.onNodeWithTag("open_app_settings").performScrollTo().performClick()
     }
 
     @Test fun choosingKoreanImmediatelyUpdatesNavigationAndSavesPreference() {
         openSettings()
         compose.onNodeWithText("한국어").performScrollTo().performClick()
-        compose.onNode(hasText("설정") and isSelectable()).assertIsSelected()
+        compose.onNodeWithText("설정").assertIsDisplayed()
         compose.onNodeWithText("화면 테마").performScrollTo().assertIsDisplayed()
         compose.runOnIdle { assertEquals("ko", container.settings.settings.value.language) }
     }
@@ -44,11 +48,11 @@ class SettingsScreenTest {
         compose.runOnIdle { assertEquals(ThemeMode.DARK, container.settings.settings.value.theme) }
     }
 
-    @Test fun accountOpensLoginAndBackReturnsToSettings() {
-        openSettings()
+    @Test fun accountOpensLoginAndBackReturnsToMyPage() {
+        openMyPage()
         compose.onNodeWithText("Sign in").performScrollTo().performClick()
         compose.onNodeWithTag("login_user_id").assertIsDisplayed()
         compose.onNodeWithContentDescription("Back").performClick()
-        compose.onNode(hasText("Settings") and isSelectable()).assertIsSelected()
+        compose.onNode(hasText("My Page") and isSelectable()).assertIsSelected()
     }
 }

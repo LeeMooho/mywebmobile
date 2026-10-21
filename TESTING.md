@@ -22,6 +22,10 @@ The suite runs on the JVM without an emulator or live board server:
   and navigation to/from the login screen.
 - Board UI: loading, empty, populated, error and retry states, list-item selection,
   and detailed title/author/date/content rendering with back navigation.
+- Portfolio UI: My Page project/account states, navigation into settings and
+  Android Lab, safe device-information rendering, and all system-tool callbacks.
+- Android platform adapter: clipboard contents, Android Sharesheet chooser,
+  HTTPS VIEW intent, device snapshot, notification channel and posted notification.
 - ViewModels: input validation, successful/failed login, retry, preservation of
   password whitespace, and duplicate-request prevention.
 - HTTPS MockWebServer: login and board-detail API paths, full post mapping, Bearer token delivery, session
@@ -39,4 +43,5 @@ Robolectric does not replace checking rendering, system integration, and live
 login/board retrieval on a real device. Instrumentation tests still require a
 connected device or emulator (`bash gradlew connectedDebugAndroidTest`).
 See [API_CONFIGURATION.md](API_CONFIGURATION.md) for the server contract and
-HTTPS configuration required for real login.
+HTTPS configuration required for real login. See [ANDROID_LAB.md](ANDROID_LAB.md)
+for the Android examples, privacy choices, and extension guidance.
