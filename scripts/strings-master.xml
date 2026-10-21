@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">
         <en>myweb</en>
@@ -19,5 +19,475 @@
         <en>Settings</en>
         <ko>설정</ko>
         <ja>設定</ja>
+    </string>
+    <string name="home_title">
+        <en>Your everyday space</en>
+        <ko>나의 일상, 새로운 연결</ko>
+        <ja>日常に、新しいつながりを</ja>
+    </string>
+    <string name="home_subtitle">
+        <en>Connect, discover, and share.</en>
+        <ko>발견하고, 이야기하고, 함께해요.</ko>
+        <ja>見つけて、話して、つながろう。</ja>
+    </string>
+    <string name="home_feature_title">
+        <en>A fresh perspective</en>
+        <ko>새로운 이야기를 만나보세요</ko>
+        <ja>新しいストーリーに出会う</ja>
+    </string>
+    <string name="home_feature_body">
+        <en>Good conversations start here. Explore your community and share what matters to you.</en>
+        <ko>작은 생각이 좋은 대화의 시작이 됩니다. 커뮤니티에서 다양한 이야기를 만나보세요.</ko>
+        <ja>小さな思いが、素敵な会話の始まりに。コミュニティの話題を見つけましょう。</ja>
+    </string>
+    <string name="home_explore">
+        <en>Explore the board</en>
+        <ko>게시판 둘러보기</ko>
+        <ja>掲示板を見る</ja>
+    </string>
+    <string name="home_settings_title">
+        <en>Make it yours</en>
+        <ko>나에게 맞춘 공간</ko>
+        <ja>自分らしい空間に</ja>
+    </string>
+    <string name="home_settings_body">
+        <en>Choose your language and feel at home.</en>
+        <ko>편안한 언어로 더 가깝게 만나세요.</ko>
+        <ja>好きな言語でもっと身近に。</ja>
+    </string>
+    <string name="home_personalize">
+        <en>Personalize your experience</en>
+        <ko>내 환경 설정하기</ko>
+        <ja>環境を設定する</ja>
+    </string>
+    <string name="home_community">
+        <en>COMMUNITY</en>
+        <ko>커뮤니티</ko>
+        <ja>コミュニティ</ja>
+    </string>
+    <string name="login">
+        <en>Sign in</en>
+        <ko>로그인</ko>
+        <ja>ログイン</ja>
+    </string>
+    <string name="logout">
+        <en>Sign out</en>
+        <ko>로그아웃</ko>
+        <ja>ログアウト</ja>
+    </string>
+    <string name="back">
+        <en>Back</en>
+        <ko>뒤로</ko>
+        <ja>戻る</ja>
+    </string>
+    <string name="login_welcome">
+        <en>Welcome back</en>
+        <ko>다시 만나 반가워요</ko>
+        <ja>おかえりなさい</ja>
+    </string>
+    <string name="login_description">
+        <en>Your community is waiting. Sign in to continue.</en>
+        <ko>로그인하고 커뮤니티의 이야기를 이어가세요.</ko>
+        <ja>ログインしてコミュニティの話を続けましょう。</ja>
+    </string>
+    <string name="user_id">
+        <en>User ID</en>
+        <ko>아이디</ko>
+        <ja>ユーザーID</ja>
+    </string>
+    <string name="password">
+        <en>Password</en>
+        <ko>비밀번호</ko>
+        <ja>パスワード</ja>
+    </string>
+    <string name="show_password">
+        <en>Show</en>
+        <ko>표시</ko>
+        <ja>表示</ja>
+    </string>
+    <string name="hide_password">
+        <en>Hide</en>
+        <ko>숨기기</ko>
+        <ja>隠す</ja>
+    </string>
+    <string name="signing_in">
+        <en>Signing in…</en>
+        <ko>로그인 중…</ko>
+        <ja>ログイン中…</ja>
+    </string>
+    <string name="login_required">
+        <en>Enter your user ID and password.</en>
+        <ko>아이디와 비밀번호를 입력해 주세요.</ko>
+        <ja>ユーザーIDとパスワードを入力してください。</ja>
+    </string>
+    <string name="account">
+        <en>Account</en>
+        <ko>계정</ko>
+        <ja>アカウント</ja>
+    </string>
+    <string name="account_guest">
+        <en>Explore as a guest, or sign in to your account.</en>
+        <ko>게스트로 둘러보거나 계정에 로그인하세요.</ko>
+        <ja>ゲストとして閲覧するか、ログインしてください。</ja>
+    </string>
+    <string name="signing_out">
+        <en>Signing out…</en>
+        <ko>로그아웃 중…</ko>
+        <ja>ログアウト中…</ja>
+    </string>
+    <string name="language">
+        <en>Language</en>
+        <ko>언어</ko>
+        <ja>言語</ja>
+    </string>
+    <string name="appearance">
+        <en>Appearance</en>
+        <ko>화면 테마</ko>
+        <ja>画面テーマ</ja>
+    </string>
+    <string name="theme_system">
+        <en>Use device setting</en>
+        <ko>기기 설정 사용</ko>
+        <ja>端末の設定を使用</ja>
+    </string>
+    <string name="theme_light">
+        <en>Light</en>
+        <ko>라이트</ko>
+        <ja>ライト</ja>
+    </string>
+    <string name="theme_dark">
+        <en>Dark</en>
+        <ko>다크</ko>
+        <ja>ダーク</ja>
+    </string>
+    <string name="app_version">
+        <en>Version %1$s</en>
+        <ko>버전 %1$s</ko>
+        <ja>バージョン %1$s</ja>
+    </string>
+    <string name="error_network">
+        <en>Check your connection and try again.</en>
+        <ko>인터넷 연결을 확인하고 다시 시도해 주세요.</ko>
+        <ja>接続を確認して、もう一度お試しください。</ja>
+    </string>
+    <string name="error_unauthorized">
+        <en>Access is unavailable. Please sign in again or check your permissions.</en>
+        <ko>접근할 수 없습니다. 다시 로그인하거나 권한을 확인해 주세요.</ko>
+        <ja>アクセスできません。再度ログインするか、権限を確認してください。</ja>
+    </string>
+    <string name="error_credentials">
+        <en>The user ID or password is incorrect.</en>
+        <ko>아이디 또는 비밀번호가 올바르지 않습니다.</ko>
+        <ja>ユーザーIDまたはパスワードが正しくありません。</ja>
+    </string>
+    <string name="error_server">
+        <en>The service is unavailable. Please try again later.</en>
+        <ko>서비스를 이용할 수 없습니다. 잠시 후 다시 시도해 주세요.</ko>
+        <ja>サービスを利用できません。後でもう一度お試しください。</ja>
+    </string>
+    <string name="error_response">
+        <en>We could not read the server response. Please try again.</en>
+        <ko>서버 응답을 읽을 수 없습니다. 다시 시도해 주세요.</ko>
+        <ja>サーバーの応答を読み取れません。もう一度お試しください。</ja>
+    </string>
+    <string name="error_secure_connection">
+        <en>Sign-in is temporarily unavailable. Please try again later.</en>
+        <ko>지금은 로그인할 수 없습니다. 잠시 후 다시 시도해 주세요.</ko>
+        <ja>現在ログインできません。後でもう一度お試しください。</ja>
+    </string>
+    <string name="refresh">
+        <en>Refresh</en>
+        <ko>새로고침</ko>
+        <ja>更新</ja>
+    </string>
+    <string name="retry">
+        <en>Try again</en>
+        <ko>다시 시도</ko>
+        <ja>再試行</ja>
+    </string>
+    <string name="board_empty">
+        <en>No posts yet. Check back soon.</en>
+        <ko>아직 게시글이 없습니다. 나중에 다시 확인해 주세요.</ko>
+        <ja>投稿はまだありません。また確認してください。</ja>
+    </string>
+    <string name="board_detail">
+        <en>Post details</en>
+        <ko>게시글 상세</ko>
+        <ja>投稿の詳細</ja>
+    </string>
+    <string name="board_content">
+        <en>Content</en>
+        <ko>내용</ko>
+        <ja>内容</ja>
+    </string>
+    <string name="my_page">
+        <en>My Page</en>
+        <ko>마이페이지</ko>
+        <ja>マイページ</ja>
+    </string>
+    <string name="portfolio_name">
+        <en>Lee Mooho</en>
+        <ko>Lee Mooho</ko>
+        <ja>Lee Mooho</ja>
+    </string>
+    <string name="portfolio_role">
+        <en>Android · Full-stack Developer</en>
+        <ko>Android · 풀스택 개발자</ko>
+        <ja>Android・フルスタック開発者</ja>
+    </string>
+    <string name="portfolio_intro">
+        <en>I turn useful ideas into reliable products and verify the experience with automated tests.</en>
+        <ko>쓸모 있는 아이디어를 안정적인 제품으로 만들고 자동화 테스트로 사용자 경험을 검증합니다.</ko>
+        <ja>役立つアイデアを信頼できる製品にし、自動テストでユーザー体験を検証します。</ja>
+    </string>
+    <string name="view_github">
+        <en>View GitHub</en>
+        <ko>GitHub 보기</ko>
+        <ja>GitHubを見る</ja>
+    </string>
+    <string name="featured_project">
+        <en>FEATURED PROJECT</en>
+        <ko>대표 프로젝트</ko>
+        <ja>注目プロジェクト</ja>
+    </string>
+    <string name="myweb_project_description">
+        <en>A multilingual community app that demonstrates Compose UI, REST APIs, secure session handling, and automated regression tests.</en>
+        <ko>Compose UI, REST API, 안전한 세션 처리와 자동 회귀 테스트를 보여주는 다국어 커뮤니티 앱입니다.</ko>
+        <ja>Compose UI、REST API、安全なセッション処理、自動回帰テストを備えた多言語コミュニティアプリです。</ja>
+    </string>
+    <string name="portfolio_explore">
+        <en>Explore the portfolio</en>
+        <ko>포트폴리오 둘러보기</ko>
+        <ja>ポートフォリオを見る</ja>
+    </string>
+    <string name="android_lab">
+        <en>Android Lab</en>
+        <ko>Android Lab</ko>
+        <ja>Android Lab</ja>
+    </string>
+    <string name="android_lab_description">
+        <en>Try small, reusable examples of Android platform features.</en>
+        <ko>재사용하기 좋은 Android 플랫폼 기능 예제를 직접 체험합니다.</ko>
+        <ja>再利用しやすいAndroidプラットフォーム機能を試します。</ja>
+    </string>
+    <string name="app_settings">
+        <en>App settings</en>
+        <ko>앱 설정</ko>
+        <ja>アプリ設定</ja>
+    </string>
+    <string name="app_settings_description">
+        <en>Change the app language and light or dark appearance.</en>
+        <ko>앱 언어와 라이트·다크 화면을 변경합니다.</ko>
+        <ja>言語とライト・ダーク表示を変更します。</ja>
+    </string>
+    <string name="signed_in_as">
+        <en>Signed in as %1$s</en>
+        <ko>%1$s 계정으로 로그인됨</ko>
+        <ja>%1$sでログイン中</ja>
+    </string>
+    <string name="android_lab_intro">
+        <en>A practical playground for Android capabilities</en>
+        <ko>Android 기능을 직접 확인하는 실용적인 실험실</ko>
+        <ja>Android機能を試せる実用的なラボ</ja>
+    </string>
+    <string name="android_lab_privacy_note">
+        <en>The examples use non-sensitive device information and request permission only when Android requires it.</en>
+        <ko>민감하지 않은 기기 정보만 사용하며 Android에서 필요할 때만 권한을 요청합니다.</ko>
+        <ja>機密性のない端末情報のみを使い、Androidで必要な場合だけ権限を求めます。</ja>
+    </string>
+    <string name="device_information">
+        <en>Device information</en>
+        <ko>기기 정보</ko>
+        <ja>端末情報</ja>
+    </string>
+    <string name="device_information_description">
+        <en>Inspect safe OS, screen, density, and locale values.</en>
+        <ko>OS, 화면, 밀도, 언어 정보를 안전하게 확인합니다.</ko>
+        <ja>OS、画面、密度、言語情報を安全に確認します。</ja>
+    </string>
+    <string name="system_tools">
+        <en>System interactions</en>
+        <ko>시스템 기능</ko>
+        <ja>システム機能</ja>
+    </string>
+    <string name="system_tools_description">
+        <en>Experiment with clipboard, sharing, haptics, intents, and notifications.</en>
+        <ko>클립보드, 공유, 햅틱, 인텐트와 알림을 실험합니다.</ko>
+        <ja>クリップボード、共有、触覚、インテント、通知を試します。</ja>
+    </string>
+    <string name="device_info_safe_note">
+        <en>This page intentionally avoids hardware identifiers, phone numbers, accounts, and location.</en>
+        <ko>하드웨어 식별자, 전화번호, 계정, 위치 정보는 의도적으로 수집하지 않습니다.</ko>
+        <ja>ハードウェア識別子、電話番号、アカウント、位置情報は収集しません。</ja>
+    </string>
+    <string name="device_manufacturer">
+        <en>Manufacturer</en>
+        <ko>제조사</ko>
+        <ja>メーカー</ja>
+    </string>
+    <string name="device_model">
+        <en>Model</en>
+        <ko>모델</ko>
+        <ja>モデル</ja>
+    </string>
+    <string name="android_version">
+        <en>Android version</en>
+        <ko>Android 버전</ko>
+        <ja>Androidバージョン</ja>
+    </string>
+    <string name="sdk_level">
+        <en>SDK level</en>
+        <ko>SDK 레벨</ko>
+        <ja>SDKレベル</ja>
+    </string>
+    <string name="screen_size">
+        <en>Screen size</en>
+        <ko>화면 크기</ko>
+        <ja>画面サイズ</ja>
+    </string>
+    <string name="screen_size_value">
+        <en>%1$d × %2$d dp</en>
+        <ko>%1$d × %2$d dp</ko>
+        <ja>%1$d × %2$d dp</ja>
+    </string>
+    <string name="screen_density">
+        <en>Density (dpi)</en>
+        <ko>화면 밀도(dpi)</ko>
+        <ja>画面密度（dpi）</ja>
+    </string>
+    <string name="device_locale">
+        <en>Locale</en>
+        <ko>언어 환경</ko>
+        <ja>言語環境</ja>
+    </string>
+    <string name="system_tools_intro">
+        <en>Each example uses the Android system UI or a platform service, while keeping side effects behind a testable adapter.</en>
+        <ko>각 예제는 Android 시스템 UI 또는 플랫폼 서비스를 사용하며 부수 효과는 테스트 가능한 어댑터로 분리했습니다.</ko>
+        <ja>各例はAndroidのシステムUIやサービスを使い、副作用をテスト可能なアダプターに分けています。</ja>
+    </string>
+    <string name="copy_portfolio_link">
+        <en>Clipboard</en>
+        <ko>클립보드</ko>
+        <ja>クリップボード</ja>
+    </string>
+    <string name="copy_portfolio_link_description">
+        <en>Copy the portfolio link with Android ClipboardManager.</en>
+        <ko>Android ClipboardManager로 포트폴리오 링크를 복사합니다.</ko>
+        <ja>Android ClipboardManagerでポートフォリオリンクをコピーします。</ja>
+    </string>
+    <string name="share_portfolio">
+        <en>Share sheet</en>
+        <ko>공유 시트</ko>
+        <ja>共有シート</ja>
+    </string>
+    <string name="share_portfolio_description">
+        <en>Open the Android Sharesheet with a prepared portfolio message.</en>
+        <ko>포트폴리오 소개 문구가 담긴 Android 공유 시트를 엽니다.</ko>
+        <ja>紹介文入りのAndroid共有シートを開きます。</ja>
+    </string>
+    <string name="haptic_feedback">
+        <en>Haptic feedback</en>
+        <ko>햅틱 피드백</ko>
+        <ja>触覚フィードバック</ja>
+    </string>
+    <string name="haptic_feedback_description">
+        <en>Play a short tactile response through Compose.</en>
+        <ko>Compose를 통해 짧은 진동 반응을 재생합니다.</ko>
+        <ja>Composeから短い触覚反応を再生します。</ja>
+    </string>
+    <string name="demo_notification">
+        <en>Notification</en>
+        <ko>알림</ko>
+        <ja>通知</ja>
+    </string>
+    <string name="demo_notification_description">
+        <en>Create a notification channel and post a local demo notification.</en>
+        <ko>알림 채널을 만들고 로컬 데모 알림을 표시합니다.</ko>
+        <ja>通知チャンネルを作成し、ローカル通知を表示します。</ja>
+    </string>
+    <string name="open_github_description">
+        <en>Open the portfolio profile with a safe external VIEW intent.</en>
+        <ko>안전한 외부 VIEW 인텐트로 포트폴리오 프로필을 엽니다.</ko>
+        <ja>安全な外部VIEWインテントでプロフィールを開きます。</ja>
+    </string>
+    <string name="try_feature">
+        <en>Try it</en>
+        <ko>실행하기</ko>
+        <ja>試す</ja>
+    </string>
+    <string name="portfolio_link_copied">
+        <en>Portfolio link copied.</en>
+        <ko>포트폴리오 링크를 복사했습니다.</ko>
+        <ja>ポートフォリオリンクをコピーしました。</ja>
+    </string>
+    <string name="share_sheet_opened">
+        <en>Android share sheet opened.</en>
+        <ko>Android 공유 시트를 열었습니다.</ko>
+        <ja>Android共有シートを開きました。</ja>
+    </string>
+    <string name="haptic_played">
+        <en>Haptic feedback played.</en>
+        <ko>햅틱 피드백을 재생했습니다.</ko>
+        <ja>触覚フィードバックを再生しました。</ja>
+    </string>
+    <string name="notification_sent">
+        <en>Demo notification sent.</en>
+        <ko>데모 알림을 보냈습니다.</ko>
+        <ja>デモ通知を送信しました。</ja>
+    </string>
+    <string name="notification_denied">
+        <en>Notification permission was not granted.</en>
+        <ko>알림 권한이 허용되지 않았습니다.</ko>
+        <ja>通知権限が許可されませんでした。</ja>
+    </string>
+    <string name="notification_unavailable">
+        <en>Notifications are currently unavailable.</en>
+        <ko>현재 알림을 사용할 수 없습니다.</ko>
+        <ja>現在、通知を利用できません。</ja>
+    </string>
+    <string name="portfolio_link_label">
+        <en>Portfolio link</en>
+        <ko>포트폴리오 링크</ko>
+        <ja>ポートフォリオリンク</ja>
+    </string>
+    <string name="portfolio_share_subject">
+        <en>Lee Mooho portfolio</en>
+        <ko>Lee Mooho 포트폴리오</ko>
+        <ja>Lee Mooho ポートフォリオ</ja>
+    </string>
+    <string name="portfolio_share_text">
+        <en>Explore my Android portfolio: %1$s</en>
+        <ko>Android 포트폴리오를 확인해 보세요: %1$s</ko>
+        <ja>Androidポートフォリオをご覧ください: %1$s</ja>
+    </string>
+    <string name="share_chooser_title">
+        <en>Share portfolio</en>
+        <ko>포트폴리오 공유</ko>
+        <ja>ポートフォリオを共有</ja>
+    </string>
+    <string name="notification_channel_name">
+        <en>Portfolio Lab</en>
+        <ko>Portfolio Lab</ko>
+        <ja>Portfolio Lab</ja>
+    </string>
+    <string name="notification_channel_description">
+        <en>Notifications created by Android Lab examples</en>
+        <ko>Android Lab 예제에서 만드는 알림</ko>
+        <ja>Android Labのサンプル通知</ja>
+    </string>
+    <string name="demo_notification_title">
+        <en>Android Lab is working</en>
+        <ko>Android Lab이 동작 중입니다</ko>
+        <ja>Android Labが動作しています</ja>
+    </string>
+    <string name="demo_notification_body">
+        <en>This notification was created locally by the portfolio app.</en>
+        <ko>포트폴리오 앱에서 로컬로 만든 데모 알림입니다.</ko>
+        <ja>ポートフォリオアプリがローカルで作成した通知です。</ja>
+    </string>
+    <string name="unknown_value">
+        <en>Unknown</en>
+        <ko>알 수 없음</ko>
+        <ja>不明</ja>
     </string>
 </resources>

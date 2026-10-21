@@ -1,3 +1,5 @@
+import java.net.URI
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
@@ -11,8 +13,15 @@ android {
         applicationId = "com.example.myweb"
         minSdk = 28
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "1.1.0"
+        val apiBaseUrl = providers.gradleProperty("apiBaseUrl")
+            .orElse("http://www.mooho.shop:8080/").get()
+        val parsedUrl = URI(apiBaseUrl)
+        require(parsedUrl.scheme in listOf("http", "https") && parsedUrl.host != null &&
+            parsedUrl.userInfo == null && parsedUrl.query == null && parsedUrl.fragment == null &&
+            parsedUrl.path.endsWith("/")) { "apiBaseUrl must be an HTTP(S) URL ending in /" }
+        buildConfigField("String", "API_BASE_URL", "\"${parsedUrl.toASCIIString()}\"")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -36,8 +45,13 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    testOptions {
+        unitTests.isIncludeAndroidResources = true
+    }
+
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -48,25 +62,24 @@ android {
         }
     }
 
-    signingConfigs {
-        create("release") {
-            storeFile = file("D:/mobile/mywebmobile/key/my-release-key.jks")
-            storePassword = "1234qwer!!"
-            keyAlias = "my-key"
-            keyPassword = "1234qwer!!"
+    // Release signing is optional for local development. Supply credentials securely
+    // in the release build environment; never keep them in source control.
+    val releaseStorePath = providers.environmentVariable("RELEASE_STORE_FILE").orNull
+    if (!releaseStorePath.isNullOrBlank()) {
+        signingConfigs {
+            create("release") {
+                storeFile = file(releaseStorePath)
+                storePassword = providers.environmentVariable("RELEASE_STORE_PASSWORD").orNull
+                keyAlias = providers.environmentVariable("RELEASE_KEY_ALIAS").orNull
+                keyPassword = providers.environmentVariable("RELEASE_KEY_PASSWORD").orNull
+            }
         }
+        buildTypes.getByName("release").signingConfig = signingConfigs.getByName("release")
     }
 
-    buildTypes {
-        getByName("release") {
-            isMinifyEnabled = false
-            signingConfig = signingConfigs.getByName("release")
-        }
-    }
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -75,45 +88,25 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+    implementation("androidx.navigation:navigation-compose:2.7.0")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+
     testImplementation(libs.junit)
+    testImplementation("org.robolectric:robolectric:4.11.1")
+    testImplementation("androidx.test:core:1.5.0")
+    testImplementation("androidx.compose.ui:ui-test-junit4")
+    testImplementation("com.squareup.okhttp3:mockwebserver:4.12.0")
+    testImplementation("com.squareup.okhttp3:okhttp-tls:4.12.0")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
+
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-
-
-    // Compose BOM (버전 통합 관리)
-    implementation(platform("androidx.compose:compose-bom:2023.10.01")) // 직접 명시 권장
-    androidTestImplementation(platform("androidx.compose:compose-bom:2023.10.01"))
-
-    // Compose 핵심 구성요소
-    implementation("androidx.compose.ui:ui")
-    implementation("androidx.compose.ui:ui-tooling-preview")
-    implementation("androidx.compose.material3:material3")
-    implementation("androidx.compose.runtime:runtime")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose") // viewModel()
-
-    // 디버그 도구
-    debugImplementation("androidx.compose.ui:ui-tooling")
-    debugImplementation("androidx.compose.ui:ui-test-manifest")
-
-    // 테스트
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
-
-    // Retrofit + Gson
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-
-    // RecyclerView
-    implementation("androidx.recyclerview:recyclerview:1.3.2")
-
-    // Lifecycle ViewModel & LiveData
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
-
-    // Navigation
-    implementation("androidx.navigation:navigation-compose:2.7.0")
 }
-
