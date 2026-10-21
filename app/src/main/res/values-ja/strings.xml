@@ -4,4 +4,13 @@
   <string name="home">ホーム</string>
   <string name="board">掲示板</string>
   <string name="settings">設定</string>
+  <string name="home_title">日常に、新しいつながりを</string>
+  <string name="home_subtitle">見つけて、話して、つながろう。</string>
+  <string name="home_feature_title">新しいストーリーに出会う</string>
+  <string name="home_feature_body">小さな思いが、素敵な会話の始まりに。コミュニティの話題を見つけましょう。</string>
+  <string name="home_explore">掲示板を見る</string>
+  <string name="home_settings_title">自分らしい空間に</string>
+  <string name="home_settings_body">好きな言語でもっと身近に。</string>
+  <string name="home_personalize">環境を設定する</string>
+  <string name="home_community">コミュニティ</string>
 </resources>

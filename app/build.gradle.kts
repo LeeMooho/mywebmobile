@@ -11,8 +11,8 @@ android {
         applicationId = "com.example.myweb"
         minSdk = 28
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "1.1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -36,6 +36,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    testOptions {
+        unitTests.isIncludeAndroidResources = true
+    }
+
     buildFeatures {
         compose = true
     }
@@ -48,21 +52,21 @@ android {
         }
     }
 
-    signingConfigs {
-        create("release") {
-            storeFile = file("D:/mobile/mywebmobile/key/my-release-key.jks")
-            storePassword = "1234qwer!!"
-            keyAlias = "my-key"
-            keyPassword = "1234qwer!!"
+    // Release signing is optional for local development. Supply credentials securely
+    // in the release build environment; never keep them in source control.
+    val releaseStorePath = providers.environmentVariable("RELEASE_STORE_FILE").orNull
+    if (!releaseStorePath.isNullOrBlank()) {
+        signingConfigs {
+            create("release") {
+                storeFile = file(releaseStorePath)
+                storePassword = providers.environmentVariable("RELEASE_STORE_PASSWORD").orNull
+                keyAlias = providers.environmentVariable("RELEASE_KEY_ALIAS").orNull
+                keyPassword = providers.environmentVariable("RELEASE_KEY_PASSWORD").orNull
+            }
         }
+        buildTypes.getByName("release").signingConfig = signingConfigs.getByName("release")
     }
 
-    buildTypes {
-        getByName("release") {
-            isMinifyEnabled = false
-            signingConfig = signingConfigs.getByName("release")
-        }
-    }
 }
 
 dependencies {
@@ -76,6 +80,9 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     testImplementation(libs.junit)
+    testImplementation("org.robolectric:robolectric:4.11.1")
+    testImplementation("androidx.test:core:1.5.0")
+    testImplementation("androidx.compose.ui:ui-test-junit4")
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))

@@ -4,4 +4,13 @@
   <string name="home">홈</string>
   <string name="board">게시판</string>
   <string name="settings">설정</string>
+  <string name="home_title">나의 일상, 새로운 연결</string>
+  <string name="home_subtitle">발견하고, 이야기하고, 함께해요.</string>
+  <string name="home_feature_title">새로운 이야기를 만나보세요</string>
+  <string name="home_feature_body">작은 생각이 좋은 대화의 시작이 됩니다. 커뮤니티에서 다양한 이야기를 만나보세요.</string>
+  <string name="home_explore">게시판 둘러보기</string>
+  <string name="home_settings_title">나에게 맞춘 공간</string>
+  <string name="home_settings_body">편안한 언어로 더 가깝게 만나세요.</string>
+  <string name="home_personalize">내 환경 설정하기</string>
+  <string name="home_community">커뮤니티</string>
 </resources>

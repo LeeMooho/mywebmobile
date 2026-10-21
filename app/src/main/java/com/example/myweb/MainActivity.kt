@@ -22,6 +22,7 @@ import com.example.myweb.utils.LocaleHelper
 import com.example.myweb.ui.HomeScreen
 import com.example.myweb.ui.BoardApp
 import com.example.myweb.ui.SettingsScreen
+import com.example.myweb.ui.theme.MywebTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +34,7 @@ class MainActivity : ComponentActivity() {
             CompositionLocalProvider(
                 LocalContext provides localizedContext
             ) {
-                MainScreen()
+                MywebTheme { MainScreen() }
             }
         }
     }
@@ -48,6 +49,8 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MainScreen() {
     val navController = rememberNavController()
+    val backStackEntry by navController.currentBackStackEntryAsState()
+    val currentRoute = backStackEntry?.destination?.route
 
     Scaffold(
         bottomBar = {
@@ -55,7 +58,7 @@ fun MainScreen() {
                 NavigationBarItem(
                     icon = { Icon(Icons.Default.Home, contentDescription = null) },
                     label = { Text(stringResource(R.string.home)) },
-                    selected = navController.currentDestination?.route == "home",
+                    selected = currentRoute == "home",
                     onClick = {
                         navController.navigate("home") {
                             popUpTo(navController.graph.findStartDestination().id) { saveState = true }
@@ -67,7 +70,7 @@ fun MainScreen() {
                 NavigationBarItem(
                     icon = { Icon(Icons.Default.List, contentDescription = null) },
                     label = { Text(stringResource(R.string.board)) },
-                    selected = navController.currentDestination?.route == "board",
+                    selected = currentRoute == "board",
                     onClick = {
                         navController.navigate("board") {
                             popUpTo(navController.graph.findStartDestination().id) { saveState = true }
@@ -79,7 +82,7 @@ fun MainScreen() {
                 NavigationBarItem(
                     icon = { Icon(Icons.Default.Settings, contentDescription = null) },
                     label = { Text(stringResource(R.string.settings)) },
-                    selected = navController.currentDestination?.route == "settings",
+                    selected = currentRoute == "settings",
                     onClick = {
                         navController.navigate("settings") {
                             popUpTo(navController.graph.findStartDestination().id) { saveState = true }
@@ -96,7 +99,16 @@ fun MainScreen() {
             startDestination = "home",
             modifier = Modifier.padding(innerPadding)
         ) {
-            composable("home") { HomeScreen() }
+            composable("home") {
+                HomeScreen(
+                    onBoardClick = {
+                        navController.navigate("board") { launchSingleTop = true }
+                    },
+                    onSettingsClick = {
+                        navController.navigate("settings") { launchSingleTop = true }
+                    }
+                )
+            }
             composable("board") { BoardApp() }
             composable("settings") { SettingsScreen() }
           }

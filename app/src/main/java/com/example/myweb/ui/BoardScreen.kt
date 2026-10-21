@@ -10,6 +10,8 @@ import com.example.myweb.model.BoardDTO
 import com.example.myweb.viewmodel.BoardViewModel
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.res.stringResource
+import com.example.myweb.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -22,7 +24,7 @@ fun BoardApp(viewModel: BoardViewModel = viewModel()) {
 
     Scaffold(
         topBar = {
-            TopAppBar(title = { Text("게시판 목록") })
+            TopAppBar(title = { Text(stringResource(R.string.board)) })
         }
     ) { padding ->
         LazyColumn(contentPadding = padding) {
@@ -35,11 +37,13 @@ fun BoardApp(viewModel: BoardViewModel = viewModel()) {
 
 @Composable
 fun BoardItem(board: BoardDTO) {
-    Column(modifier = Modifier
-        .fillMaxWidth()
-        .padding(16.dp)) {
-        Text(text = board.boardTitle, style = MaterialTheme.typography.titleMedium)
-        Text(text = board.boardWriter, style = MaterialTheme.typography.labelMedium)
-        Text(text = board.boardRegdate, style = MaterialTheme.typography.labelSmall)
+    OutlinedCard(modifier = Modifier.fillMaxWidth().padding(horizontal = 20.dp, vertical = 6.dp)) {
+        Column(Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            Text(text = board.boardTitle, style = MaterialTheme.typography.titleMedium)
+            Text(text = board.boardWriter, style = MaterialTheme.typography.labelMedium,
+                color = MaterialTheme.colorScheme.primary)
+            Text(text = board.boardRegdate, style = MaterialTheme.typography.labelSmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant)
+        }
     }
 }
